@@ -140,11 +140,6 @@ function openModal(photo) {
 }
 
   else if (photo.media_type === "video") {
-
-    // Hide the iframe
-    modalVideo.style.display = "none";
-    
-
     // Show the NASA logo instead
     modalImage.style.display = "block";
     modalImage.src = "img/NASA-Logo-Large.jpg";
@@ -152,7 +147,7 @@ function openModal(photo) {
     // Show the watch video link
     const videoLink = document.getElementById("videoLink");
     videoLink.href = photo.url;
-    videoLink.style.display = "inline-block";
+    videoLink.style.display = "flex";
 
 }
 
@@ -171,10 +166,7 @@ window.addEventListener("click", (event) => {
     const modal = document.getElementById("imageModal");
 
     if (event.target === modal) {
-
         modal.style.display = "none";
-        document.getElementById("modalVideo").src = "";
-
     }
 
 });
